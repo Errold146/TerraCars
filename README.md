@@ -40,7 +40,7 @@
 
 1. **Clona el repositorio:**
 ```bash
-git clone <tu-repositorio>
+git clone https://github.com/Errold146/TerraCars.git
 cd rent-cars
 ```
 
