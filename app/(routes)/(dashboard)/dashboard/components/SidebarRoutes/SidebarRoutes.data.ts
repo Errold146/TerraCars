@@ -18,7 +18,7 @@ export const DataGeneralSidebar = [
     },
 ]
 
-export const dataAdminSidebar = [
+export const DataAdminSidebar = [
     {
         icon: SquareGanttChart,
         label: "Manage your cars",

@@ -6,6 +6,8 @@
 [![Next.js](https://img.shields.io/badge/Next.js-15.x-black?logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-latest-000000?logo=shadcnui&logoColor=white)](https://ui.shadcn.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.x-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Axios](https://img.shields.io/badge/Axios-1.x-5A29E4?logo=axios&logoColor=white)](https://axios-http.com/)
+[![Cloudinary](https://img.shields.io/badge/Cloudinary-API-blue?logo=cloudinary&logoColor=white)](https://cloudinary.com/)
 
 **TerraCars** es una aplicación web de práctica para la renta de coches, desarrollada con tecnologías modernas del stack Next.js.
 
@@ -17,6 +19,8 @@
 - **[TypeScript](https://www.typescriptlang.org/)** - Tipado estático para JavaScript
 - **[Tailwind CSS](https://tailwindcss.com/)** - Framework de utilidades CSS
 - **[Shadcn/UI](https://ui.shadcn.com/)** - Componentes de UI reutilizables
+- **[Axios](https://axios-http.com/)** - Cliente HTTP para llamadas a APIs
+- **[Cloudinary](https://cloudinary.com/)** - CDN y gestión de imágenes
 - **[Prisma](https://www.prisma.io/)** - ORM para Node.js y TypeScript
 - **[PostgreSQL](https://www.postgresql.org/)** - Base de datos relacional
 - **[Neon](https://neon.tech/)** - Serverless Postgres
