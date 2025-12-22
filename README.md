@@ -139,7 +139,7 @@ npm run lint         # Ejecuta el linter
 - [Documentación de Shadcn/UI](https://ui.shadcn.com)
 
 ## 👨‍💻 Autor
-Errold Núñez Sánchez, estudiante de programación especializado en JavaScript y sus diferentes Framework's de ForntEnd y BackEnd
+Errold Núñez Sánchez, estudiante de programación especializado en JavaScript y sus diferentes Framework's de FrontEnd y BackEnd
 
 ## ✉️ Contacto
 [![GitHub](https://img.shields.io/badge/GitHub-Errold146-181717?logo=github)](https://github.com/Errold146)
