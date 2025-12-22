@@ -4,7 +4,7 @@ import { useAuth } from "@clerk/nextjs";
 import { Separator } from "@/components/ui/separator";
 
 import { SidebarItem } from "./SidebarItem";
-import { DataGeneralSidebar } from "./SidebarRoutes.data";
+import { DataAdminSidebar, DataGeneralSidebar } from "./SidebarRoutes.data";
 
 export function SidebarRoutes() {
 
@@ -18,6 +18,18 @@ export function SidebarRoutes() {
 
                     {
                         DataGeneralSidebar.map(item => (
+                            <SidebarItem key={item.label} item={item} />
+                        ))
+                    }
+                </div>
+
+                <Separator />
+                
+                <div className="p-2 md:p-6">
+                    <p className="mb-2 text-slate-500 uppercase">Admin</p>
+
+                    {
+                        DataAdminSidebar.map(item => (
                             <SidebarItem key={item.label} item={item} />
                         ))
                     }
