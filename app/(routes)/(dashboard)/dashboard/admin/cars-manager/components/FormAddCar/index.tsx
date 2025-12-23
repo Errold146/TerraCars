@@ -47,7 +47,7 @@ export function FormAddCar({ setOpenDialog }: Props) {
 
         try {
             await axios.post("/api/car", values)
-            toast.success("Car created successfully")
+            toast.success("Car created successful")
             router.refresh()
             
         } catch (error) {
@@ -78,7 +78,7 @@ export function FormAddCar({ setOpenDialog }: Props) {
             onChange(url)
             await form.trigger("photo")
             setPhotoUploaded(true)
-            toast.success("Image uploaded successfully!", { id: "upload" })
+            toast.success("Image uploaded successful!", { id: "upload" })
         } catch (error: unknown) {
             const message = error instanceof Error ? error.message : "Upload error"
             toast.error(message, { id: "upload" })

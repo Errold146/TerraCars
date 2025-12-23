@@ -19,6 +19,7 @@ export function ButtonAddCar() {
                 <Button
                     variant={"outline"}
                     onClick={() => setOpenDialog(true)}
+                    className="cursor-pointer"
                 >
                     Add New Car
                     <PlusCircle className="ml-2" />

@@ -22,7 +22,7 @@ export function ButtonEditCar({ carData }: Props) {
                 <Button
                     variant={"outline"}
                     onClick={() => setOpenDialog(true)}
-                    className="text-emerald-300 border-emerald-300 bg-emerald-50 hover:bg-emerald-500 hover:text-emerald-50 transition-colors duration-300"
+                    className="cursor-pointer text-emerald-300 border-emerald-300 bg-emerald-50 hover:bg-emerald-500 hover:text-emerald-50 transition-colors duration-300"
                 >
                     Edit
                     <Pencil className="w-4 h-4 ml-3" />
