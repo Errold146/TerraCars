@@ -1,6 +1,11 @@
-import { Calendar, Car, Heart, SquareGanttChart } from "lucide-react";
+import { Calendar, Car, Heart, SquareGanttChart, Home } from "lucide-react";
 
 export const DataGeneralSidebar = [
+    {
+        icon: Home,
+        label: "Home",
+        href: "/"
+    },
     {
         icon: Car,
         label: "Cars",

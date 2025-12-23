@@ -22,7 +22,7 @@ export function CardCar({ car }: Props) {
     const deletedCar = async () => {
         try {
             await axios.delete(`/api/car/${car.id}`)
-            toast.success("Car deleted successfully")
+            toast.success("Car deleted successful")
             router.refresh()
 
         } catch (error) {
@@ -36,9 +36,9 @@ export function CardCar({ car }: Props) {
             await axios.patch(`/api/car/${car.id}`, { isPublish: publish })
 
             if(publish) {
-                toast.success("Car Published Successfully")
+                toast.success("Car Published successful")
             } else {
-                toast.success("Car Unpublish Successfully")
+                toast.success("Car Unpublish successful")
             }
 
             router.refresh()
@@ -109,7 +109,7 @@ export function CardCar({ car }: Props) {
                     <Button
                         variant={"outline"}
                         onClick={deletedCar}
-                        className="group text-red-500 bg-red-50 hover:bg-red-500 hover:text-red-50 transition-colors duration-300 border-red-500"
+                        className="group cursor-pointer text-red-500 bg-red-50 hover:bg-red-500 hover:text-red-50 transition-colors duration-300 border-red-500"
                     >
                         Delete
                         <Trash2 className="h-4 w-4 ml-2 text-red-500 group-hover:text-red-50 transition-colors duration-300" />
@@ -121,7 +121,7 @@ export function CardCar({ car }: Props) {
                 {
                     car.isPublish ? (
                         <Button
-                            className="w-full"
+                            className="w-full cursor-pointer"
                             variant={"outline"}
                             onClick={() => handlePublishCar(false)}
                         >
@@ -130,7 +130,7 @@ export function CardCar({ car }: Props) {
                         </Button>
                     ) : (
                         <Button
-                            className="w-full"
+                            className="w-full cursor-pointer"
                             onClick={() => handlePublishCar(true)}
                         >
                             Publish

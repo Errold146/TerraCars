@@ -53,7 +53,7 @@ export async function DELETE(req: Request) {
         const result = await cloudinary.uploader.destroy(publicId);
 
         if (result.result === "ok") {
-            return NextResponse.json({ message: "Image deleted successfully" });
+            return NextResponse.json({ message: "Image deleted successful" });
         } else {
             return NextResponse.json({ error: "Failed to delete image" }, { status: 400 });
         }

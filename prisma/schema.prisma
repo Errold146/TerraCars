@@ -31,17 +31,19 @@ model Car {
 }
 
 model Order {
-    id           String   @id @default(uuid())
-    carId        String   @db.Text
-    carName      String   @db.Text
-    userId       String   @db.Text
-    orderDate    DateTime @default(now())
-    orderEndDate DateTime @default(now())
-    status       String   @db.Text
-    totalAmount  String   @db.Text
-    car          Car      @relation(fields: [carId], references: [id], onDelete: Cascade)
-    createdAt    DateTime @default(now())
-    updatedAt    DateTime @updatedAt
+    id               String   @id @default(uuid())
+    carId            String   @db.Text
+    carName          String   @db.Text
+    userId           String   @db.Text
+    orderDate        DateTime @default(now())
+    orderEndDate     DateTime @default(now())
+    status           String   @db.Text
+    totalAmount      String   @db.Text
+    stripeSessionId  String?  @db.Text
+    stripePaidAt     DateTime?
+    car              Car      @relation(fields: [carId], references: [id], onDelete: Cascade)
+    createdAt        DateTime @default(now())
+    updatedAt        DateTime @updatedAt
 
     @@index([carId])
     @@index([userId])

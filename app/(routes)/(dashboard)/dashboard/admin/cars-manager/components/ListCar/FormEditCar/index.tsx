@@ -47,7 +47,7 @@ export function FormEditCar({ setOpenDialog, carData }: Props) {
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
             await axios.patch(`/api/car/${carData.id}`, values)
-            toast.success("Car edited successfully")
+            toast.success("Car edited successful")
             router.refresh()
             setOpenDialog(false)
 
@@ -107,7 +107,7 @@ export function FormEditCar({ setOpenDialog, carData }: Props) {
             field.onChange(imageUrl);
 
             setPhotoUploaded(true);
-            toast.success("Image uploaded successfully!", { id: "upload" });
+            toast.success("Image uploaded successful!", { id: "upload" });
         } catch (error) {
             console.error("Upload error:", error);
             toast.error("Failed to upload image", { id: "upload" });
