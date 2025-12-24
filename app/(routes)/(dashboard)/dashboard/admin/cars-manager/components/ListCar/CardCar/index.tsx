@@ -50,7 +50,7 @@ export function CardCar({ car }: Props) {
     }
 
     return (
-        <div className="relative p-1 bg-white rounded-lg shadow-md hover:shadow-xl">
+        <div className="relative p-1 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
             <Image 
                 src={car.photo}
                 alt={`Image of ${car.name}`}

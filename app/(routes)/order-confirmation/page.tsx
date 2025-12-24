@@ -6,7 +6,7 @@ import { Navbar } from "@/components/shared/Navbar";
 
 export default function OrderConfirmationPage() {
     return (
-        <div className="min-h-screen bg-linar-to-br from-slate-50 to-slate-100">
+        <div className="min-h-screen bg-linear-to-br from-slate-50 to-slate-100">
             <Navbar />
 
             <div className="flex items-center justify-center px-4 py-20">
@@ -49,8 +49,8 @@ export default function OrderConfirmationPage() {
                                     <Mail className="w-5 h-5 text-blue-500 mt-1 shrink-0" />
                                     <div>
                                         <p className="text-sm text-slate-600 font-medium">Email</p>
-                                        <p className="text-slate-900 font-semibold">support@rentcars.com</p>
-                                        <p className="text-slate-900 font-semibold">info@rentcars.com</p>
+                                        <p className="text-slate-900 font-semibold">support@correo.com</p>
+                                        <p className="text-slate-900 font-semibold">info@correo.com</p>
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@ export default function OrderConfirmationPage() {
 
                         {/* CTA Button */}
                         <Link href={"/"} className="w-full">
-                            <Button className="w-full h-12 bg-linaer-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                            <Button className="w-full h-12 bg-linear-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
                                 <Home className="w-5 h-5 mr-2" />
                                 Return to Homepage
                             </Button>

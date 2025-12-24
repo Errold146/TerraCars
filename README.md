@@ -8,6 +8,8 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.x-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Axios](https://img.shields.io/badge/Axios-1.x-5A29E4?logo=axios&logoColor=white)](https://axios-http.com/)
 [![Cloudinary](https://img.shields.io/badge/Cloudinary-API-blue?logo=cloudinary&logoColor=white)](https://cloudinary.com/)
+[![Stripe](https://img.shields.io/badge/Stripe-Payment-635BFF?logo=stripe&logoColor=white)](https://stripe.com/)
+[![Zustand](https://img.shields.io/badge/Zustand-State-black?logo=react&logoColor=white)](https://zustand-demo.pmnd.rs/)
 
 **TerraCars** es una aplicación web de práctica para la renta de coches, desarrollada con tecnologías modernas del stack Next.js.
 
@@ -25,6 +27,8 @@
 - **[PostgreSQL](https://www.postgresql.org/)** - Base de datos relacional
 - **[Neon](https://neon.tech/)** - Serverless Postgres
 - **[Clerk](https://clerk.com/)** - Autenticación y gestión de usuarios
+- **[Stripe](https://stripe.com/)** - Pasarela de pagos
+- **[Zustand](https://zustand-demo.pmnd.rs/)** - Gestión de estado global
 
 ## 🚀 Características Implementadas
 
@@ -33,6 +37,9 @@
 - ✅ Dashboard de administración
 - ✅ Sistema de navegación con sidebar responsivo
 - ✅ Modelos de datos para Cars y Orders
+- ✅ **Pasarela de pagos con Stripe** - Procesamiento seguro de pagos para reservas
+- ✅ **Sistema de favoritos con Zustand** - Los usuarios pueden marcar coches como favoritos con gestión de estado global
+- ✅ **Página de favoritos** - Visualización de todos los coches guardados en favoritos
 
 ## 📋 Requisitos Previos
 
@@ -69,6 +76,11 @@ NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/
 
 # Database
 DATABASE_URL="postgresql://usuario:password@host/database?sslmode=require"
+
+# Stripe
+STRIPE_SECRET_KEY=tu_clave_secreta_stripe
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=tu_clave_publica_stripe
+STRIPE_WEBHOOK_SECRET=tu_secreto_webhook_stripe
 ```
 
 4. **Sincroniza la base de datos:**

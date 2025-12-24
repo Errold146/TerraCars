@@ -2,25 +2,31 @@
 
 import Image from "next/image";
 import { Car } from "@prisma/client";
-import { formatPrice } from "@/lib/utils";
+import { cn, formatPrice } from "@/lib/utils";
+import { useFavoritesCars } from '@/hooks/useFavoritesCars';
 import { ModalAddReservation } from "@/components/shared/ModalAddReservation";
-import { CreditCard, Gem, Wrench, Users, Fuel, Gauge, Heart } from "lucide-react";
+import { CreditCard, Gem, Wrench, Users, Fuel, Gauge, Heart, Car as Carro } from "lucide-react";
 
 interface Props {
     cars: Car[]
 }
 
 export function ListCars({ cars }: Props) {
+
+    const { favoriteItems, addFavoriteItem, removeFavoriteItem } = useFavoritesCars()
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {
                 cars.map((car: Car) => {
                     const {id, name, priceDay, photo, people, transmission, type, cv, engine } = car
 
+                    const likedItem = favoriteItems.some(item => item.id === car.id)
+
                     return (
                         <div 
                             key={id}
-                            className="p-1 rounded-lg shadow-md hover:shadow-xl"
+                            className="p-1 rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
                         >
                             <Image 
                                 src={photo}
@@ -33,7 +39,10 @@ export function ListCars({ cars }: Props) {
 
                             <div className="p-3">
                                 <div className="flex flex-col mb-3 gap-x-4">
-                                    <p className="text-xl min-h-16 lg:min-h-fit">{name}</p>
+                                    <p className=" flex gap-2 text-xl min-h-16 lg:min-h-fit font-semibold">
+                                        <Carro className="h-7 w-7" />
+                                        {name}
+                                    </p>
                                 </div>
 
                                 <div className="grid md:grid-cols-2  gap-x-4">
@@ -71,7 +80,16 @@ export function ListCars({ cars }: Props) {
                                 
                                 <div className="flex items-center justify-between mx-0.5 gap-x-3">
                                     <ModalAddReservation car={car} />
-                                    <Heart className="h-6 w-6 mr-3 mt-2 cursor-pointer text-red-600" onClick={() => console.log("Fovorite")} />
+                                    <Heart 
+                                        className={cn(
+                                            "h-6 w-6 mr-3 mt-2 cursor-pointer" ,
+                                            likedItem && "fill-red-500 text-red-800"
+                                        )}
+                                        onClick={likedItem 
+                                            ? () => removeFavoriteItem(car.id)
+                                            : () => addFavoriteItem(car)
+                                        } 
+                                    />
                                 </div>
                             </div>
                         </div>
