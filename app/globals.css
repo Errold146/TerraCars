@@ -1,16 +1,19 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@theme {
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-}
-
 html, body, :root {
   height: 100%;
 }
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant hover (&:hover);
+@custom-variant focus (&:focus);
+@custom-variant active (&:active);
+@custom-variant focus-visible (&:focus-visible);
+@custom-variant focus-within (&:focus-within);
+@custom-variant disabled (&:disabled);
+@custom-variant group-hover (.group:hover &);
+@custom-variant group-focus (.group:focus &);
 
 @theme inline {
   --color-background: var(--background);

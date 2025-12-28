@@ -14,6 +14,7 @@ export function ButtonAddCar() {
     return (
         <Dialog
             open={openDialog}
+            onOpenChange={setOpenDialog}
         >
             <DialogTrigger asChild>
                 <Button
