@@ -23,10 +23,12 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
 		<ClerkProvider>
 			<html lang="en" suppressHydrationWarning>
 				<body
-					className={`${outFit.className}`}
+					className={`${outFit.className} flex flex-col min-h-screen`}
 				>
 					<NextTopLoader color="#000" />
-					{children}
+					<main className="flex-1">
+						{children}
+					</main>
 					<Footer />
 					<Toaster position="top-right" richColors />
 				</body>
