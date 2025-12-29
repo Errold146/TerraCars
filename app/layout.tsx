@@ -5,6 +5,7 @@ import NextTopLoader from 'nextjs-toploader';
 import { Toaster } from 'sonner'
 
 import {ClerkProvider} from '@clerk/nextjs'
+import { Footer } from "@/components/shared/Footer";
 
 const outFit = Outfit({
   	subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
 				>
 					<NextTopLoader color="#000" />
 					{children}
+					<Footer />
 					<Toaster position="top-right" richColors />
 				</body>
 			</html>

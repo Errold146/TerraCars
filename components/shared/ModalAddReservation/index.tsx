@@ -55,7 +55,7 @@ export function ModalAddReservation({ car }: Props) {
             <AlertDialogTrigger asChild>
                 <Button
                     variant={"outline"}
-                    className="mt-3 text-emerald-500 border-emerald-300 hover:bg-emerald-500 hover:text-emerald-50 transition-colors duration-300 cursor-pointer"
+                    className="w-full text-emerald-500 border-emerald-300 hover:bg-emerald-500 hover:text-emerald-50 transition-colors duration-300 cursor-pointer"
                 >
                     <Calendar className="w-6 h-6 mr-2" />
                     Book Car

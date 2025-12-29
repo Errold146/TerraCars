@@ -17,15 +17,14 @@ export function ButtonEditCar({ carData }: Props) {
     const [openDialog, setOpenDialog] = useState(false)
 
     return (
-        <Dialog open={openDialog} >
+        <Dialog open={openDialog} onOpenChange={setOpenDialog}>
             <DialogTrigger asChild>
                 <Button
                     variant={"outline"}
-                    onClick={() => setOpenDialog(true)}
-                    className="cursor-pointer text-emerald-300 border-emerald-300 bg-emerald-50 hover:bg-emerald-500 hover:text-emerald-50 transition-colors duration-300"
+                    className="w-full text-blue-600 border-blue-300 hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all duration-300"
                 >
+                    <Pencil className="w-4 h-4 mr-2" />
                     Edit
-                    <Pencil className="w-4 h-4 ml-3" />
                 </Button>
             </DialogTrigger>
             <DialogContent>

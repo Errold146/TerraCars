@@ -13,7 +13,30 @@
 
 **TerraCars** es una aplicación web de práctica para la renta de coches, desarrollada con tecnologías modernas del stack Next.js.
 
-> ⚠️ **Nota:** Este es un proyecto de práctica educativa. Todos los datos y funcionalidades son ficticios.
+> ⚠️ **Nota Importante:** Este es un proyecto de práctica educativa. Todos los datos y funcionalidades son ficticios.
+> 
+> 🚫 **ADVERTENCIA DE SEGURIDAD:** Aunque la aplicación utiliza Stripe como pasarela de pagos REAL, NO ingreses información de tarjetas reales. Usa únicamente las tarjetas de prueba proporcionadas.
+> 
+> 🔐 **Rutas de Administración:** Las rutas `/dashboard/admin/cars-manager` y `/dashboard/admin/reserves-admin` actualmente NO están protegidas por roles. En un entorno de producción, estas rutas deberían estar protegidas. Por tratarse de un proyecto de demostración educativa, esta protección no ha sido implementada.
+
+## 🎨 Actualización Reciente - Diciembre 2025
+
+### ✨ Mejoras en el Diseño de Tarjetas de Autos
+- **Componente CardCar Reutilizable** - Creado en `@/components/shared/CardCar` para eliminar código duplicado
+- **Diseño Moderno y Consistente** - Tarjetas con bordes redondeados, sombras elegantes y efectos hover suaves
+- **Imagen con Efectos** - Overlay gradiente y zoom al pasar el mouse
+- **Badge de Precio Flotante** - Ubicado en la esquina superior izquierda
+- **Botón de Favoritos Mejorado** - Con animaciones y mejor posicionamiento
+- **Soporte para Dark Mode** - Todos los componentes adaptados para tema oscuro
+- **Especificaciones Organizadas** - Componente `CardCarSpecs` con iconos en fondos redondeados
+- **Responsive Design** - Grid adaptativo según el tamaño de pantalla
+- **Reducción de Código** - De ~300 líneas totales a ~80 líneas reutilizables
+
+### 🔧 Mejoras en Funcionalidad
+- **Filtros Responsivos** - Grid adaptativo para móvil, tablet y desktop
+- **Reset de Filtros** - Los select's se limpian correctamente al remover filtros
+- **Modal de Edición** - Ahora se cierra correctamente al hacer clic fuera o en la X
+- **Footer Informativo** - Advertencias claras sobre el uso de tarjetas de prueba
 
 ## 🛠️ Stack Tecnológico
 
@@ -40,6 +63,22 @@
 - ✅ **Pasarela de pagos con Stripe** - Procesamiento seguro de pagos para reservas
 - ✅ **Sistema de favoritos con Zustand** - Los usuarios pueden marcar coches como favoritos con gestión de estado global
 - ✅ **Página de favoritos** - Visualización de todos los coches guardados en favoritos
+- ✅ **Componentes de UI Modernos** - Tarjetas reutilizables con diseño elegante y consistente
+- ✅ **Responsive Design** - Diseño adaptativo para móvil, tablet y desktop
+- ✅ **Filtros Avanzados** - Sistema de filtrado con reseteo completo de selección
+- ✅ **Footer Informativo** - Advertencias de seguridad y datos de prueba
+
+## 💳 Información de Prueba de Pagos
+
+Para probar el sistema de pagos, utiliza **ÚNICAMENTE** estos datos de prueba:
+
+```
+Número de Tarjeta: 4242 4242 4242 4242
+Fecha de Expiración: 12/28
+Código de Seguridad (CVV): 123
+```
+
+🚫 **NUNCA USES TARJETAS REALES** - Esta aplicación procesa pagos a través de Stripe en modo de prueba, pero es solo para fines educativos.
 
 ## 📋 Requisitos Previos
 
@@ -101,20 +140,65 @@ Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 ```
 rent-cars/
 ├── app/
-│   ├── (auth)/          # Rutas de autenticación
-│   ├── (routes)/        # Rutas principales
-│   │   └── (dashboard)/ # Dashboard de administración
-│   ├── layout.tsx
-│   └── globals.css
+│   ├── (auth)/                    # Rutas de autenticación
+│   │   ├── sign-in/              # Página de inicio de sesión
+│   │   └── sign-up/              # Página de registro
+│   ├── (routes)/                 # Rutas principales
+│   │   ├── (dashboard)/          # Dashboard de administración
+│   │   │   ├── dashboard/        # Vista principal del dashboard
+│   │   │   │   ├── admin/        # Rutas de administrador
+│   │   │   │   │   ├── cars-manager/      # Gestión de autos
+│   │   │   │   │   └── reserves-admin/    # Gestión de reservas
+│   │   │   │   └── components/   # Componentes del dashboard
+│   │   │   ├── favorites-cars/   # Página de favoritos
+│   │   │   └── reserves/         # Página de reservas del usuario
+│   │   ├── (home)/               # Rutas públicas
+│   │   │   ├── cars/             # Catálogo de autos
+│   │   │   │   └── components/   # Filtros y listado
+│   │   │   └── components/       # Componentes del home
+│   │   ├── order-confirmation/   # Confirmación de pedido
+│   │   └── order-error/          # Error en pedido
+│   ├── api/                      # API Routes
+│   │   ├── car/                  # Endpoints de autos
+│   │   ├── checkout/             # Proceso de pago
+│   │   ├── upload/               # Subida de imágenes
+│   │   └── webhooks/stripe/      # Webhooks de Stripe
+│   ├── layout.tsx                # Layout principal con Footer
+│   └── globals.css               # Estilos globales
 ├── components/
-│   └── ui/              # Componentes Shadcn/UI
+│   ├── shared/                   # Componentes compartidos
+│   │   ├── CardCar/              # 🆕 Tarjeta de auto reutilizable
+│   │   │   ├── index.tsx         # Componente principal
+│   │   │   └── CardCarSpecs.tsx  # Especificaciones del auto
+│   │   ├── Footer/               # 🆕 Footer con advertencias
+│   │   ├── ModalAddReservation/  # Modal de reserva
+│   │   ├── Navbar/               # Barra de navegación
+│   │   └── Reveal/               # Animaciones de reveal
+│   └── ui/                       # Componentes Shadcn/UI
+│       ├── button.tsx
+│       ├── dialog.tsx
+│       ├── select.tsx
+│       └── ...
+├── hooks/
+│   └── useFavoritesCars.ts       # Hook de favoritos con Zustand
 ├── lib/
-│   ├── db.ts            # Cliente Prisma
-│   └── utils.ts
+│   ├── db.ts                     # Cliente Prisma
+│   ├── stripe.ts                 # Configuración de Stripe
+│   └── utils.ts                  # Utilidades y helpers
 ├── prisma/
-│   └── schema.prisma    # Esquema de la base de datos
-└── public/
+│   └── schema.prisma             # Esquema de la base de datos
+├── public/
+│   └── images/                   # Imágenes estáticas
+└── package.json
 ```
+
+### 🔑 Componentes Clave
+
+- **`CardCar`** - Componente reutilizable para mostrar tarjetas de autos en todo el sitio
+- **`CardCarSpecs`** - Muestra las especificaciones técnicas de los vehículos
+- **`Footer`** - Footer global con advertencias de seguridad y datos de prueba
+- **`ModalAddReservation`** - Gestiona el proceso de reserva con calendario
+- **`FilterCars`** - Sistema de filtrado responsive para el catálogo
 
 ## 🗄️ Modelos de Datos
 
@@ -122,7 +206,7 @@ rent-cars/
 - ID único
 - Información del usuario propietario
 - Detalles del vehículo (nombre, CV, transmisión, etc.)
-- Precio por día
+- Precio por day
 - Estado de publicación
 - Relación con órdenes
 

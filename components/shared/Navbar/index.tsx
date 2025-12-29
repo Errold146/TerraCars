@@ -28,7 +28,7 @@ export function Navbar() {
                     {userId ? (
                         <>
                             <Link href={"/favorites-cars"}>
-                                <Heart className="cursor-pointer text-red-500" />
+                                <Heart className="cursor-pointer text-red-500 hover:fill-red-500" />
                             </Link>
                             <UserButton />
                         </>
